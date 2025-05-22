@@ -337,6 +337,11 @@
             <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -1276,4 +1281,15 @@
             </build>
         </profile>
     </profiles>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id/>
+            <url/>
+        </snapshotRepository>
+        <repository>
+            <id/>
+            <url/>
+        </repository>
+    </distributionManagement>
 </project>

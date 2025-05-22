@@ -1,0 +1,30 @@
+{
+  "leaveApp": {
+    "leaveApplication": {
+      "home": {
+        "title": "Leave Applications",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Leave Application",
+        "createOrEditLabel": "Create or edit a Leave Application",
+        "notFound": "No Leave Applications found"
+      },
+      "created": "A new Leave Application is created with identifier {{ param }}",
+      "updated": "A Leave Application is updated with identifier {{ param }}",
+      "deleted": "A Leave Application is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Leave Application {{ id }}?"
+      },
+      "detail": {
+        "title": "Leave Application"
+      },
+      "id": "ID",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "reason": "Reason",
+      "submissionDate": "Submission Date",
+      "status": "Status",
+      "rejectionReason": "Rejection Reason",
+      "applicant": "Applicant"
+    }
+  }
+}
