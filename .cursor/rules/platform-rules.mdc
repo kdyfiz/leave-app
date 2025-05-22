@@ -1,0 +1,64 @@
+```json
+---
+description: Guides the AI to understand and generate code for a Leave Application System used by Students, Staff, and Admins, with a focus on usability and clear workflows.
+globs: 
+alwaysApply: false
+---
+{
+  "name": "Leave Application System",
+  "description": "Guides the AI to understand and generate code for a Leave Application System used by Students, Staff, and Admins, with a focus on usability and clear workflows.",
+  "triggers": [
+    {
+      "type": "file_extension",
+      "values": [".js", ".jsx", ".ts", ".tsx", ".py", ".java", ".html", ".css", ".sql"]
+    },
+    {
+      "type": "file_content",
+      "contains": ["leave application", "student leave", "staff leave", "admin leave", "leave request", "absence", "start date", "end date", "reason", "approval", "rejection", "pending", "leave history"]
+    },
+    {
+      "type": "prompt_content",
+      "contains": ["leave application system", "student leave", "staff leave", "admin leave management", "apply for leave", "review leave", "approve leave", "reject leave", "leave history", "manage absences"]
+    }
+  ],
+  "actions": [
+    {
+      "type": "set_context",
+      "context": {
+        "domain": "Leave Application Management",
+        "purpose": "Managing leave requests for students and staff, and providing administrative oversight.",
+        "features": [
+          "Leave Application Submission (Student/Staff)",
+          "Leave Application Review and Approval/Rejection (Admin)",
+          "Leave History Tracking",
+          "Date Validation (Future Dates Only)",
+          "Reason for Leave Input",
+          "Status Tracking (Pending, Approved, Rejected)",
+          "User Notifications (Submission, Status Change)",
+          "Admin Dashboard for Pending Applications",
+          "Rejection Reason Input (Admin)",
+          "Reporting and Analytics (Leave Trends)"
+        ],
+        "target_audience": "Students, Staff, and Administrators",
+        "ui_ux_guidelines": {
+          "design_system": "Use a clean and intuitive design system (e.g., Material Design, Bootstrap) that is easy to navigate and understand. Prioritize clarity and accessibility.",
+          "responsiveness": "Ensure the UI is fully responsive across different devices (desktops, tablets, mobile phones).",
+          "interactivity": "Incorporate interactive elements like calendar widgets for date selection, confirmation modals, and real-time status updates.",
+          "data_visualization": "Use simple charts to visualize leave trends for administrators.",
+          "accessibility": "Follow accessibility guidelines (WCAG) to ensure the platform is usable by people with disabilities.",
+          "user_flow": "Design intuitive user flows for both leave application submission and review/approval processes.",
+          "performance": "Optimize the UI for fast loading times, especially for the admin dashboard.",
+          "feedback": "Provide clear and immediate feedback to user actions (e.g., submission confirmation, approval/rejection messages).",
+          "consistency": "Maintain consistent styling and behavior across all pages and components.",
+          "date_selection": "Utilize a user-friendly calendar widget for selecting start and end dates, with clear validation to prevent past dates.",
+          "status_indicators": "Use clear visual indicators (e.g., color-coded labels) to represent the status of leave applications."
+        }
+      }
+    },
+    {
+        "type":"add_instruction",
+        "instruction":"When generating UI code or suggestions, prioritize usability, clarity, and responsiveness. Ensure the UI aligns with the specified design system and accessibility guidelines. Focus on creating intuitive user flows for both students/staff and administrators. When generating backend code, focus on data validation, security, and efficient data storage and retrieval. Ensure all business logic rules are enforced."
+    }
+  ]
+}
+```
