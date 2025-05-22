@@ -1,0 +1,32 @@
+/**
+ * Leave Application System JDL
+ * Entities: LeaveApplication
+ * Enum: LeaveStatus
+ * Relationship: LeaveApplication ↔ User (applicant)
+ */
+
+entity LeaveApplication {
+  startDate LocalDate required, // Must not be in the past
+  endDate LocalDate required, // Must be on or after startDate
+  reason String required minlength(10) maxlength(500), // Reason for leave
+  submissionDate Instant required, // Auto-filled with current timestamp
+  status LeaveStatus required, // PENDING, APPROVED, REJECTED
+  rejectionReason String maxlength(500) // Required if status = REJECTED
+}
+
+enum LeaveStatus {
+  PENDING,
+  APPROVED,
+  REJECTED
+}
+
+// Relationship to built-in User entity (applicant)
+relationship ManyToOne {
+  LeaveApplication{applicant(login) required} to User with builtInEntity
+}
+
+// Service layer logic will be handled in a separate class
+service LeaveApplication with serviceClass
+
+// Enable pagination for LeaveApplication list views
+paginate LeaveApplication with pagination
